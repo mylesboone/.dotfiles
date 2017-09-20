@@ -32,3 +32,14 @@ Plug 'chriskempson/base16-vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
 call plug#end()
+set background=dark
+let base16colorspace=256
+colorscheme base16-default-dark
+" Strip trailing whitespace before saving
+au BufWritePre * :call <SID>StripWhite()
+fun! <SID>StripWhite()
+  norm md
+  %s/[ \t]\+$//ge
+  %s!^\( \+\)\t!\=StrRepeat("\t", 1 + strlen(submatch(1)) / 8)!ge
+  norm `d
+endfun
