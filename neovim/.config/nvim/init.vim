@@ -1,3 +1,4 @@
+let mapleader = "\<Space>"
 map <F2> :NERDTreeToggle<CR>
 set autoindent
 set shiftwidth=2
@@ -21,6 +22,8 @@ set showmatch
 set timeout
 set timeoutlen=1000
 set timeoutlen=100
+set splitright
+set splitbelow
 call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
@@ -35,6 +38,7 @@ call plug#end()
 set background=dark
 let base16colorspace=256
 colorscheme base16-default-dark
+
 " Strip trailing whitespace before saving
 au BufWritePre * :call <SID>StripWhite()
 fun! <SID>StripWhite()
@@ -43,3 +47,38 @@ fun! <SID>StripWhite()
   %s!^\( \+\)\t!\=StrRepeat("\t", 1 + strlen(submatch(1)) / 8)!ge
   norm `d
 endfun
+
+"Boiler configuration
+function BoilerBuilder()
+  if filereadable("boiler") == 1
+    if filereadable(@%) == 0
+      read !bundle exec ruby boiler %
+      norm ggdd
+    elseif line('$') == 1 && col('$') == 1
+      read !bundle exec ruby boiler %
+      norm ggdd
+    endif
+  endif
+endfunction
+
+"Rails open associated spec files or vice versa
+au BufNewFile,BufReadPost *.rb silent! :call BoilerBuilder()
+function! RailsOpenAltCommand(path, vim_command)
+  if a:path =~ "spec/"
+    let l:alternate = substitute(a:path, "spec/", "app/", "")
+    let l:alternate = substitute(l:alternate, "_spec", "", "")
+  elseif a:path =~ "app/"
+    let l:alternate = substitute(a:path, "app/", "spec/", "")
+    let l:alternate = substitute(l:alternate, ".rb", "_spec.rb", "")
+  endif
+
+  if empty(l:alternate)
+    echo "No alternate file for " . a:path . " exists!"
+  else
+    exec a:vim_command . " " . l:alternate
+  endif
+endfunction
+
+" Mappings
+inoremap jj <Esc>
+nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<cr>
