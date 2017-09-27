@@ -81,4 +81,6 @@ endfunction
 
 " Mappings
 inoremap jj <Esc>
+inoremap jq <Esc>:wq<cr>
+inoremap jw <Esc>:w<cr>
 nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<cr>
