@@ -21,10 +21,12 @@ set showcmd
 set showmatch
 set timeout
 set timeoutlen=1000
-set timeoutlen=100
+set ttimeoutlen=100
 set splitright
 set splitbelow
 call plug#begin('~/.config/nvim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'jelera/vim-javascript-syntax'
@@ -84,3 +86,42 @@ inoremap jj <Esc>
 inoremap jq <Esc>:wq<cr>
 inoremap jw <Esc>:w<cr>
 nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<cr>
+nnoremap <leader>b :Buffer<CR>
+nnoremap <leader>/ :Files<CR>
+nnoremap <C-J> i<CR><Esc>k0
+
+"Rails file navigation
+nnoremap <leader>c :Econtroller<CR>
+nnoremap <leader>m :Emodel<CR>
+nnoremap <leader>v :Eview<CR>
+nnoremap <leader>u :Eunittest<CR>
+
+" fzf
+set rtp+=~/.fzf
+set hidden
+
+function! AskQuit (msg, options, quit_option)
+  if confirm(a:msg, a:options) == a:quit_option
+    exit
+  endif
+endfunction
+
+function! EnsureDirExists ()
+  let required_dir = expand("%:h")
+  if !isdirectory(required_dir)
+    call AskQuit("Parent directory '" . required_dir . "' doesn't exist.",
+          \       "&Create it\nor &Quit?", 2)
+
+    try
+      call mkdir( required_dir, 'p' )
+    catch
+      call AskQuit("Can't create '" . required_dir . "'",
+            \            "&Quit\nor &Continue anyway?", 1)
+    endtry
+  endif
+endfunction
+
+augroup AutoMkdir
+  autocmd!
+  autocmd  BufNewFile  *  :call EnsureDirExists()
+augroup END

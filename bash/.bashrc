@@ -124,4 +124,15 @@ if [ -f ~/.bashrc.local ]; then
 fi
 PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
 
+export FZF_DEFAULT_COMMAND='ag -g "" --hidden --ignore .git'
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+a() {
+  if [ "$TMUX" = "" ]; then
+    git add $(git status -s | awk '{ print $2 }' | fzf -m)
+  else
+    git add $(git status -s | awk '{ print $2 }' | fzf-tmux -m)
+  fi
+}
