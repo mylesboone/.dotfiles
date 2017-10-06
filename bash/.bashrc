@@ -116,8 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 source ~/.bash/base16-default-dark.sh
 if [ -f ~/.bashrc.local ]; then
     . ~/.bashrc.local
@@ -136,3 +134,8 @@ a() {
     git add $(git status -s | awk '{ print $2 }' | fzf-tmux -m)
   fi
 }
+
+export GEM_PATH="$HOME/.rvm/gems/ruby-2.2.2@global"
+export GEM_HOME="$HOME/.rvm/gems/ruby-2.2.2"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

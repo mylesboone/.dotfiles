@@ -25,6 +25,10 @@ set ttimeoutlen=100
 set splitright
 set splitbelow
 call plug#begin('~/.config/nvim/plugged')
+Plug 'thoughtbot/vim-rspec'
+Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-ruby/vim-ruby'
@@ -85,16 +89,27 @@ endfunction
 inoremap jj <Esc>
 inoremap jq <Esc>:wq<cr>
 inoremap jw <Esc>:w<cr>
-nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<cr>
+nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>/ :Files<CR>
 nnoremap <C-J> i<CR><Esc>k0
+nnoremap <Leader>g :GFiles?<CR>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
 nnoremap <leader>m :Emodel<CR>
 nnoremap <leader>v :Eview<CR>
 nnoremap <leader>u :Eunittest<CR>
+
+" RSpec.vim mappings
+let g:rspec_command = 'call VimuxRunCommand("SKIP_SIMPLECOV=true bundle exec rspec {spec}\n")'
+map <Leader>rf :call RunCurrentSpecFile()<CR>
+map <Leader>rr :call RunNearestSpec()<CR>
+map <Leader>rl :call RunLastSpec()<CR>
 
 " fzf
 set rtp+=~/.fzf
