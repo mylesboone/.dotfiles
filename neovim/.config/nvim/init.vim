@@ -1,5 +1,4 @@
 let mapleader = "\<Space>"
-map <F2> :NERDTreeToggle<CR>
 set autoindent
 set shiftwidth=2
 set softtabstop=2
@@ -25,6 +24,7 @@ set ttimeoutlen=100
 set splitright
 set splitbelow
 call plug#begin('~/.config/nvim/plugged')
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'thoughtbot/vim-rspec'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
@@ -92,7 +92,7 @@ inoremap jw <Esc>:w<cr>
 nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>/ :Files<CR>
-nnoremap <C-J> i<CR><Esc>k0
+nnoremap <C-m> i<CR><Esc>k0
 nnoremap <Leader>g :GFiles?<CR>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
@@ -105,11 +105,24 @@ nnoremap <leader>m :Emodel<CR>
 nnoremap <leader>v :Eview<CR>
 nnoremap <leader>u :Eunittest<CR>
 
+" Close the buffer and reuse the window for an existing buffer
+nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+
+"format entire file
+nnoremap <leader><tab> mtgg=G`t
+
+"tig and git mappings
+nnoremap <leader>vc :silent !tmux split-window -h "tig --follow %"<CR>
+nnoremap <leader>vb :silent !tmux split-window -h "tig blame %"<CR>
+nnoremap <leader>vv :silent !tmux split-window -h "tig"<CR>
+
 " RSpec.vim mappings
 let g:rspec_command = 'call VimuxRunCommand("SKIP_SIMPLECOV=true bundle exec rspec {spec}\n")'
 map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rr :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
+
+map <C-n> :NERDTreeFind<CR>
 
 " fzf
 set rtp+=~/.fzf
@@ -140,3 +153,15 @@ augroup AutoMkdir
   autocmd!
   autocmd  BufNewFile  *  :call EnsureDirExists()
 augroup END
+
+let g:NERDTreeIndicatorMapCustom = {
+   \ "Modified"  : "✹",
+   \ "Staged"    : "✚",
+   \ "Untracked" : "✭",
+   \ "Renamed"   : "➜",
+   \ "Unmerged"  : "═",
+   \ "Deleted"   : ":heavy_multiplication_x:",
+   \ "Dirty"     : "✗",
+   \ "Clean"     : "✔",
+   \ "Unknown"   : "?"
+   \ }
