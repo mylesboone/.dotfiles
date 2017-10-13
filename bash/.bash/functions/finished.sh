@@ -1,6 +1,4 @@
 function finished() {
-  BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  CARD=${${BRANCH[(ws:/:)2]}[(ws:-:)1]}
-
+  CARD=$(git rev-parse --abbrev-ref HEAD | sed 's:.*/::' | sed 's/-.*//')
   wf --finish-card --card $CARD
 }
