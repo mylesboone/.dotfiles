@@ -1,4 +1,5 @@
 let mapleader = "\<Space>"
+set ma
 set autoindent
 set shiftwidth=2
 set softtabstop=2
