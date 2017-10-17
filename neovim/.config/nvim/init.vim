@@ -24,6 +24,7 @@ set ttimeoutlen=100
 set splitright
 set splitbelow
 call plug#begin('~/.config/nvim/plugged')
+Plug 'kthibodeaux/pull-review'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'thoughtbot/vim-rspec'
 Plug 'benmills/vimux'
