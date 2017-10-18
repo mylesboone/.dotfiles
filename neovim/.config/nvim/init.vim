@@ -124,6 +124,9 @@ map <Leader>rl :call RunLastSpec()<CR>
 
 map <C-n> :NERDTreeFind<CR>
 
+" split line
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>$
+
 " fzf
 set rtp+=~/.fzf
 set hidden
