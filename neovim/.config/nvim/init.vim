@@ -1,5 +1,4 @@
 let mapleader = "\<Space>"
-set ma
 set autoindent
 set shiftwidth=2
 set softtabstop=2
@@ -94,7 +93,6 @@ inoremap jw <Esc>:w<cr>
 nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>/ :Files<CR>
-nnoremap <C-m> i<CR><Esc>k0
 nnoremap <Leader>g :GFiles?<CR>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>

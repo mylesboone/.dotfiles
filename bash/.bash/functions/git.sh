@@ -1,3 +1,11 @@
+g() {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status --short --branch
+  fi
+}
+
 ap() {
   if [ "$TMUX" = "" ]; then
     git add -p $(git status -s | awk '{ print $2 }' | fzf -m --preview 'git diff --color=always {}')
@@ -80,3 +88,23 @@ cfu() {
     git commit --fixup $(echo $target)
   fi
 }
+
+dev() {
+  git checkout develop && git up
+}
+
+hotfix() {
+  branch=$(echo "$@" | tr ' ' '-')
+  git checkout master && git up && git checkout -b "hotfix/$branch"
+}
+
+feature() {
+  branch=$(echo "$@" | tr ' ' '-')
+  dev && git checkout -b "feature/$branch"
+}
+
+support() {
+  branch=$(echo "$@" | tr ' ' '-')
+  dev && git checkout -b "support/$branch"
+}
+
