@@ -41,10 +41,20 @@ Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'fishbullet/deoplete-ruby'
 call plug#end()
 set background=dark
 let base16colorspace=256
 colorscheme base16-default-dark
+
+let g:deoplete#enable_at_startup = 1
+
+au BufWritePost *.rb :call jobstart('ctags')
+
+" iskeyword is local, so we remove it before leaving the buffer
+au BufLeave * set iskeyword-=:
+nnoremap <silent> <leader>n :set iskeyword+=:<CR><C-]>
 
 " Strip trailing whitespace before saving
 au BufWritePre * :call <SID>StripWhite()
