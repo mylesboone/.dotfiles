@@ -180,3 +180,5 @@ let g:NERDTreeIndicatorMapCustom = {
    \ "Clean"     : "✔",
    \ "Unknown"   : "?"
    \ }
+
+let g:ruby_indent_block_style= 'do'
