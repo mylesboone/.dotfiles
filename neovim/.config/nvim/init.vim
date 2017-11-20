@@ -24,6 +24,7 @@ set ttimeoutlen=100
 set splitright
 set splitbelow
 call plug#begin('~/.config/nvim/plugged')
+Plug 'kthibodeaux/tig.vim'
 Plug 'kthibodeaux/pull-review'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'thoughtbot/vim-rspec'
@@ -133,6 +134,11 @@ let g:rspec_command = 'call VimuxRunCommand("SKIP_SIMPLECOV=true bundle exec rsp
 map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rr :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
+
+" Tig
+" nmap <leader>c <Plug>TigFileHistory
+nmap <leader>gb <Plug>TigBlame
+nmap <leader>y <Plug>TigLatestCommitForLine
 
 map <C-n> :NERDTreeFind<CR>
 
