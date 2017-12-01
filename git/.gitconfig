@@ -1,18 +1,19 @@
 [user]
-	name = Myles Boone
-	email = myles@agopti.com
+  name = Myles Boone
+  email = myles@agopti.com
 [push]
-	default = current
+  default = current
 [core]
   editor = nvim
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
 [alias]
-	co = checkout
-	ci = commit -v
+  co = checkout
+  ci = commit -v
   unstage = reset HEAD --
   last = log -1 HEAD
   br = branch
+  short-log = log --pretty=format:'%C(yellow)%h%Creset %s'
   st = status
 [rebase]
   autostash=true

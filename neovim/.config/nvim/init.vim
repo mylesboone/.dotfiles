@@ -23,6 +23,8 @@ set timeoutlen=1000
 set ttimeoutlen=100
 set splitright
 set splitbelow
+set undofile
+set undodir=~/.config/nvim/undodir
 call plug#begin('~/.config/nvim/plugged')
 Plug 'kthibodeaux/tig.vim'
 Plug 'kthibodeaux/pull-review'
