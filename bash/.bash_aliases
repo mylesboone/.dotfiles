@@ -11,4 +11,4 @@ alias bep="SKIP_SIMPLECOV=true bundle exec rake parallel:spec[8]"
 alias drmi='docker rmi $(docker images --quiet --filter "dangling=true")'
 alias drmc='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
 alias dc="drmc; drmi"
-
+alias dbackground="docker-compose run web bundle exec rake resque:work QUEUE=*"
