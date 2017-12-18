@@ -72,10 +72,10 @@ endfun
 function BoilerBuilder()
   if filereadable("boiler") == 1
     if filereadable(@%) == 0
-      read !bundle exec ruby boiler %
+      read !be ruby boiler %
       norm ggdd
     elseif line('$') == 1 && col('$') == 1
-      read !bundle exec ruby boiler %
+      read !be ruby boiler %
       norm ggdd
     endif
   endif
@@ -132,7 +132,7 @@ nnoremap <leader>vb :silent !tmux split-window -h "tig blame %"<CR>
 nnoremap <leader>vv :silent !tmux split-window -h "tig"<CR>
 
 " RSpec.vim mappings
-let g:rspec_command = 'call VimuxRunCommand("SKIP_SIMPLECOV=true bundle exec rspec {spec}\n")'
+let g:rspec_command = 'call VimuxRunCommand("bes {spec}\n")'
 map <Leader>rf :call RunCurrentSpecFile()<CR>
 map <Leader>rr :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
