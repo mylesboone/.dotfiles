@@ -1,24 +1,8 @@
 docker_or_local() {
   if [[ -f docker-compose.yml ]]; then
-    eval "docker-compose run --rm --no-deps -e SKIP_SIMPLECOV=true web $@"
+    eval {"docker-compose run --rm --no-deps -e SKIP_SIMPLECOV=true web $@"}
   else
-    eval "SKIP_SIMPLECOV=true $@"
-  fi
-}
-
-docker_or_local_dev() {
-  if [[ -f docker-compose.yml ]]; then
-    eval "docker-compose run --rm --no-deps -e SKIP_SIMPLECOV=true -e RAILS_ENV=development web $@"
-  else
-    eval "SKIP_SIMPLECOV=true RAILS_ENV=development $@"
-  fi
-}
-
-docker_or_local_test() {
-  if [[ -f docker-compose.yml ]]; then
-    eval "docker-compose run --rm --no-deps -e SKIP_SIMPLECOV=true -e RAILS_ENV=test web $@"
-  else
-    eval "SKIP_SIMPLECOV=true RAILS_ENV=test $@"
+    eval {"SKIP_SIMPLECOV=true $@"}
   fi
 }
 
@@ -33,13 +17,13 @@ bi() {
 }
 
 clean_devdb() {
-  docker_or_local_dev "bundle exec rake db:drop db:setup"
+  docker_or_local "bundle exec rake db:drop db:setup"
 }
 clean_testdb() {
-  docker_or_local_test "bundle exec rake db:drop db:setup"
+  docker_or_local "bundle exec rake db:drop db:setup"
 }
 pclean_testdb() {
-  docker_or_local_test "bundle exec rake parallel:drop[8] parallel:setup[8]"
+  docker_or_local "bundle exec rake parallel:drop[8] parallel:setup[8]"
 }
 
 ber() {
@@ -53,10 +37,10 @@ bep() {
 }
 
 mi() {
-  docker_or_local_dev "bundle exec rake db:migrate"
+  docker_or_local "bundle exec rake db:migrate"
 }
 mit() {
-  docker_or_local_test "bundle exec rake db:migrate"
+  docker_or_local "bundle exec rake db:migrate"
 }
 pmit() {
   docker_or_local "bundle exec rake parallel:migrate[8]"
