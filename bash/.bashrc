@@ -126,7 +126,6 @@ PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[
 
 
 export FZF_DEFAULT_COMMAND='ag -g "" --hidden --ignore .git'
-setxkbmap -option caps:ctrl_modifier
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -136,7 +135,5 @@ for function in ~/.bash/functions/*; do
   source $function
 done
 
-export GEM_PATH="$HOME/.rvm/gems/ruby-2.2.2@global"
-export GEM_HOME="$HOME/.rvm/gems/ruby-2.2.2"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
