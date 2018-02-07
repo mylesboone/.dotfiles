@@ -16,6 +16,7 @@
   br = branch
   short-log = log --pretty=format:'%C(yellow)%h%Creset %s'
   st = status
+  dm = !git branch --merged origin/develop | grep -v master | grep -v develop | xargs git branch -d
 [rebase]
   autostash=true
   autosquash=true
