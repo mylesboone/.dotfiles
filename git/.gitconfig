@@ -5,6 +5,7 @@
   default = current
 [core]
   editor = nvim
+  excludesfile = ~/dotfiles/git/.gitignore
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
 [alias]
