@@ -107,3 +107,6 @@ support() {
   dev && git checkout -b "support/$branch"
 }
 
+clean_branches() {
+  git branch --merged origin/develop | grep -v master | grep -v develop | xargs git branch -d
+}
