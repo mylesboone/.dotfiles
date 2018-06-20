@@ -1,3 +1,22 @@
+base_branch() {
+  if git rev-parse -q --verify develop > /dev/null; then
+    echo "develop"
+  else
+    echo "master"
+  fi
+}
+
+gbD() {
+  if [[ $# == 0 ]]; then
+    base_branch=$(base_branch)
+    branches=$(git branch)
+    targets=$(echo $branches | awk '{$1=$1};1' | $(fzf_prog) -m --preview 'git short-log $base_branch..{} | head')
+
+    echo $targets
+    confirm && git branch -D $(echo $targets)
+  fi
+}
+
 g() {
   if [[ $# > 0 ]]; then
     git $@
