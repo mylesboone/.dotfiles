@@ -1,9 +1,9 @@
 let mapleader = "\<Space>"
 set list
+set tabstop=2
 set autoindent
 set shiftwidth=2
 set softtabstop=2
-set tabstop=2
 set expandtab
 syntax on
 set backspace=indent,eol,start
@@ -27,6 +27,7 @@ set splitbelow
 set undofile
 set undodir=~/.config/nvim/undodir
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-surround'
 Plug 'kthibodeaux/tig.vim'
 Plug 'kthibodeaux/pull-review'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -47,6 +48,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
+Plug 'FooSoft/vim-argwrap'
 call plug#end()
 set background=dark
 let base16colorspace=256
@@ -191,3 +193,8 @@ let g:NERDTreeIndicatorMapCustom = {
    \ }
 
 let g:ruby_indent_block_style= 'do'
+
+" Argwrap {{{
+let g:argwrap_padded_braces = '{'
+nnoremap <silent> <leader>a :ArgWrap<CR>
+" }}}
