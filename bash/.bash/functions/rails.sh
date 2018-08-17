@@ -6,6 +6,10 @@ docker_or_local() {
   fi
 }
 
+rl() {
+  docker_or_local "bundle exec rake routes" | ag $1
+}
+
 be() {
   docker_or_local "bundle exec $@"
 }
