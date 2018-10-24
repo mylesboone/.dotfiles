@@ -197,4 +197,5 @@ let g:ruby_indent_block_style= 'do'
 " Argwrap {{{
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>a :ArgWrap<CR>
+let g:argwrap_tail_comma = 1
 " }}}
