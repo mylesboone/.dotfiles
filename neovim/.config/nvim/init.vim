@@ -106,6 +106,7 @@ endfunction
 inoremap jj <Esc>
 inoremap jq <Esc>:wq<cr>
 inoremap jw <Esc>:w<cr>
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>/ :Files<CR>
