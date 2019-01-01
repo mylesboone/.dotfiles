@@ -5,6 +5,9 @@ alias vu="nvim +PlugInstall"
 alias vrc="nvim ~/dotfiles/neovim/.config/nvim/init.vim"
 alias t="tmux"
 alias copyssh="xclip -sel clip < ~/.ssh/id_rsa.pub"
+alias opti='cd ~/Documents/rubyapplicationrepository'
+alias pigouts='cd ~/Documents/pigouts'
+alias quote='cd ~/Documents/quote4'
 
 
 #Docker
