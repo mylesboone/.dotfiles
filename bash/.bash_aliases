@@ -4,6 +4,7 @@ alias dot='cd ~/Documents/dotfiles/'
 alias vu="nvim +PlugInstall"
 alias vrc="nvim ~/dotfiles/neovim/.config/nvim/init.vim"
 alias t="tmux"
+alias copyssh="xclip -sel clip < ~/.ssh/id_rsa.pub"
 
 
 #Docker
