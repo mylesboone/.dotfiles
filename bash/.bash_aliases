@@ -7,7 +7,7 @@ alias t="tmux"
 alias copyssh="xclip -sel clip < ~/.ssh/id_rsa.pub"
 alias opti='cd ~/Documents/rubyapplicationrepository'
 alias pigouts='cd ~/Documents/pigouts'
-alias quote='cd ~/Documents/quote4'
+alias quote4='cd ~/Documents/quote4'
 
 
 #Docker
