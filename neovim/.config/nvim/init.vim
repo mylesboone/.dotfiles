@@ -200,3 +200,6 @@ let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:argwrap_tail_comma = 1
 " }}}
+
+call deoplete#custom#option({ 'max_list': 20, 'on_insert_enter': v:false, 'omni_patterns': { 'ruby': '[^. *\t]\.{2,}\w*' }, 'min_pattern_length': 8  })
+
