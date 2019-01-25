@@ -1,9 +1,13 @@
 #nvim and dot file
 alias n='nvim'
-alias dot='cd /Users/mylesboone/Documents/dotfiles/'
+alias dot='cd ~/Documents/dotfiles/'
 alias vu="nvim +PlugInstall"
 alias vrc="nvim ~/dotfiles/neovim/.config/nvim/init.vim"
 alias t="tmux"
+alias copyssh="xclip -sel clip < ~/.ssh/id_rsa.pub"
+alias opti='cd ~/Documents/rubyapplicationrepository'
+alias pigouts='cd ~/Documents/pigouts'
+alias quote4='cd ~/Documents/quote4'
 
 
 #Docker
