@@ -130,3 +130,17 @@ export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
 
 
+# Deploy to beta servers
+# beta 1         = deploy current branch to beta1 server
+# beta 2 branch  = deploy branch to beta2 server
+beta() {
+  BRANCH=$2
+  BRANCH=${BRANCH:=`git symbolic-ref --short HEAD`}
+  if [[ "x$1" = "x" || "x$BRANCH" = "x" ]];
+  then
+      echo "Usage: $0 <beta server number> <branch name>"
+  else
+    ssh -t aws "./Simplero/script/beta-deploy-from-bastion.sh $BRANCH -l beta$1 -t deploy -e git_version=origin/$BRANCH"
+  fi
+}
+
