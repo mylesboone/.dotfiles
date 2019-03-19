@@ -1,7 +1,10 @@
-bundle/
-tags
 TAGS
+tags
 gems.ctags
 .DS_Store
 .ruby-gemset
 metadocs/
+npm-debug.log
+node_modules/
+public/packs/
+public/sprockets/
