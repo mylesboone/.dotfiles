@@ -58,50 +58,6 @@ let g:deoplete#enable_at_startup = 1
 
 au BufWritePost *.rb :call jobstart('ctags')
 
-" iskeyword is local, so we remove it before leaving the buffer
-au BufLeave * set iskeyword-=:
-nnoremap <silent> <leader>n :set iskeyword+=:<CR><C-]>
-
-" Strip trailing whitespace before saving
-au BufWritePre * :call <SID>StripWhite()
-fun! <SID>StripWhite()
-  norm md
-  %s/[ \t]\+$//ge
-  %s!^\( \+\)\t!\=StrRepeat("\t", 1 + strlen(submatch(1)) / 8)!ge
-  norm `d
-endfun
-
-"Boiler configuration
-function BoilerBuilder()
-  if filereadable("boiler") == 1
-    if filereadable(@%) == 0
-      read !./boiler %
-      norm ggdd
-    elseif line('$') == 1 && col('$') == 1
-      read !./boiler %
-      norm ggdd
-    endif
-  endif
-endfunction
-
-"Rails open associated spec files or vice versa
-au BufNewFile,BufReadPost *.rb silent! :call BoilerBuilder()
-function! RailsOpenAltCommand(path, vim_command)
-  if a:path =~ "spec/"
-    let l:alternate = substitute(a:path, "spec/", "app/", "")
-    let l:alternate = substitute(l:alternate, "_spec", "", "")
-  elseif a:path =~ "app/"
-    let l:alternate = substitute(a:path, "app/", "spec/", "")
-    let l:alternate = substitute(l:alternate, ".rb", "_spec.rb", "")
-  endif
-
-  if empty(l:alternate)
-    echo "No alternate file for " . a:path . " exists!"
-  else
-    exec a:vim_command . " " . l:alternate
-  endif
-endfunction
-
 " Mappings
 inoremap jj <Esc>
 inoremap jq <Esc>:wq<cr>
@@ -155,32 +111,6 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>$
 set rtp+=~/.fzf
 set hidden
 
-function! AskQuit (msg, options, quit_option)
-  if confirm(a:msg, a:options) == a:quit_option
-    exit
-  endif
-endfunction
-
-function! EnsureDirExists ()
-  let required_dir = expand("%:h")
-  if !isdirectory(required_dir)
-    call AskQuit("Parent directory '" . required_dir . "' doesn't exist.",
-          \       "&Create it\nor &Quit?", 2)
-
-    try
-      call mkdir( required_dir, 'p' )
-    catch
-      call AskQuit("Can't create '" . required_dir . "'",
-            \            "&Quit\nor &Continue anyway?", 1)
-    endtry
-  endif
-endfunction
-
-augroup AutoMkdir
-  autocmd!
-  autocmd  BufNewFile  *  :call EnsureDirExists()
-augroup END
-
 let g:NERDTreeIndicatorMapCustom = {
    \ "Modified"  : "✹",
    \ "Staged"    : "✚",
@@ -201,5 +131,9 @@ nnoremap <silent> <leader>a :ArgWrap<CR>
 let g:argwrap_tail_comma = 1
 " }}}
 
-call deoplete#custom#option({ 'max_list': 20, 'on_insert_enter': v:false, 'omni_patterns': { 'ruby': '[^. *\t]\.{2,}\w*' }, 'min_pattern_length': 8  })
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+highlight ALEWarning ctermbg=18 ctermfg=none
 
+nmap <leader>lq <Plug>UseQwertyNavigation
+nmap <leader>lc <Plug>UseColemakNavigation
