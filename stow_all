@@ -1,0 +1,11 @@
+# vi: set ft=sh :
+
+stow -vv ctags
+stow -vv gem
+stow -vv git
+stow -vv neovim
+stow -vv reek
+stow -vv rspec
+stow -vv tig
+stow -vv tmux
+stow -vv zsh
