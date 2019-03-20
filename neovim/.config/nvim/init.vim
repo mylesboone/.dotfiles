@@ -63,10 +63,9 @@ inoremap jj <Esc>
 inoremap jq <Esc>:wq<cr>
 inoremap jw <Esc>:w<cr>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-nnoremap <Leader>. :call RailsOpenAltCommand(expand('%'), ':vsplit')<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>/ :Files<CR>
-nnoremap <Leader>g :GFiles?<CR>
+nnoremap <leader>g :GFiles?<CR>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
@@ -101,6 +100,7 @@ map <Leader>rl :call RunLastSpec()<CR>
 " nmap <leader>c <Plug>TigFileHistory
 nmap <leader>gb <Plug>TigBlame
 nmap <leader>y <Plug>TigLatestCommitForLine
+nmap <leader>. <Plug>RailsOpenAlt
 
 map <C-n> :NERDTreeFind<CR>
 
