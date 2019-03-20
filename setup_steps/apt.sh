@@ -13,6 +13,7 @@ add_apt_source "/etc/apt/sources.list.d/enpass.list" "deb http://repo.sinew.in/ 
 curl -fsSL https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 add_apt_source "/etc/apt/sources.list.d/docker.list" "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -sSL https://dist.crystal-lang.org/apt/setup.sh | sudo bash
 
 sudo apt-get update
 
@@ -23,6 +24,7 @@ sudo apt-get install -y \
   build-essential \
   ca-certificates \
   cmake \
+  crystal \
   docker-ce \
   enpass \
   exuberant-ctags \
