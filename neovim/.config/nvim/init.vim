@@ -54,7 +54,9 @@ set background=dark
 let base16colorspace=256
 colorscheme base16-default-dark
 
+let g:python3_host_prog = '/usr/bin/python3.6'
 let g:deoplete#enable_at_startup = 1
+let g:NERDTreeWinSize=30
 
 au BufWritePost *.rb :call jobstart('ctags')
 
