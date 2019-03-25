@@ -12,7 +12,7 @@ g() {
   if [[ $# > 0 ]]; then
     git $@
   else
-    git status --short --branch
+    git status
   fi
 }
 
@@ -115,6 +115,10 @@ changes() {
   else
     tig $(base_branch).."$(git rev-parse --abbrev-ref HEAD)"
   fi
+}
+
+clean_branches() {
+  git branch --merged origin/develop | grep -v master | grep -v develop | xargs git branch -d
 }
 
 # Complete g like git
