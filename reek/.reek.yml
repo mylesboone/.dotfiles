@@ -1,3 +1,4 @@
----
 IrresponsibleModule:
   enabled: false
+UnusedPrivateMethod:
+  enabled: true
