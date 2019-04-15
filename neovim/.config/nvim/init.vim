@@ -74,6 +74,7 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <leader>ff :Ag<space>
 nnoremap <leader>fs :Ag<space><c-R><c-W><CR>
+nnoremap <leader>ft :Ag<space><c-R>"<CR>
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
