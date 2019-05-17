@@ -27,6 +27,7 @@ set splitbelow
 set undofile
 set undodir=~/.config/nvim/undodir
 call plug#begin('~/.config/nvim/plugged')
+Plug 'posva/vim-vue'
 Plug 'tpope/vim-surround'
 Plug 'kthibodeaux/tig.vim'
 Plug 'kthibodeaux/pull-review'
