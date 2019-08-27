@@ -55,6 +55,12 @@ set background=dark
 let base16colorspace=256
 colorscheme base16-default-dark
 
+command! -bang -nargs=* Find
+      \ call fzf#vim#grep(
+      \ 'ag --hidden -A 0 -B 0 --ignore .git --nogroup --color '.shellescape(<q-args>), 0,
+      \   fzf#vim#with_preview('up:40%')
+      \ )
+
 let g:python3_host_prog = '/usr/bin/python3.6'
 let g:deoplete#enable_at_startup = 1
 let g:NERDTreeWinSize=30
@@ -73,9 +79,9 @@ nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <leader>ff :Ag<space>
-nnoremap <leader>fs :Ag<space><c-R><c-W><CR>
-nnoremap <leader>ft :Ag<space><c-R>"<CR>
+nnoremap <leader>ff :Find<space>
+nnoremap <leader>fs :Find<space><c-R><c-W><CR>
+nnoremap <leader>ft :Find<space><c-R>"<CR>
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
