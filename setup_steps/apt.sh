@@ -27,6 +27,7 @@ sudo apt-get install -y \
   cmake \
   crystal \
   containerd.io \
+  docker.io \
   docker-ce \
   docker-ce-cli \
   enpass \
