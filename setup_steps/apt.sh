@@ -52,6 +52,7 @@ sudo apt-get install -y \
   python3-dev \
   python-pip \
   python3-pip \
+  safe-rm \
   software-properties-common \
   sshfs \
   tig \
