@@ -9,7 +9,9 @@ export FILTHY_SHOW_EXIT_CODE=1
 export CLICOLOR=1
 
 # fzf to use ag
-export FZF_DEFAULT_COMMAND='ag -g "" --hidden --ignore .git'
+#
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+
 export FZF_COMPLETION_TRIGGER=',,'
 
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local ]]

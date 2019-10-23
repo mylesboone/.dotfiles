@@ -57,8 +57,8 @@ colorscheme base16-default-dark
 
 command! -bang -nargs=* Find
       \ call fzf#vim#grep(
-      \ 'ag --hidden -A 0 -B 0 --ignore .git --nogroup --color '.shellescape(<q-args>), 0,
-      \   fzf#vim#with_preview('up:40%')
+      \'rg --column  --no-heading --fixed-strings --smart-case  --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1,
+      \   fzf#vim#with_preview('up:60%')
       \ )
 
 let g:python3_host_prog = '/usr/bin/python3.6'
