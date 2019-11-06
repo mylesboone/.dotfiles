@@ -43,7 +43,10 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ -f ~/.zshrc.local ]] &&  source ~/.zshrc.local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/chruby/chruby.sh
-chruby ruby-2.5.1
+[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/chruby.sh ] && chruby ruby-2.5.1
 
 opentmux
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
