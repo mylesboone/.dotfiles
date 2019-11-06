@@ -8,4 +8,5 @@ stow -vv reek
 stow -vv rspec
 stow -vv tig
 stow -vv tmux
+stow -vv tmate
 stow -vv zsh

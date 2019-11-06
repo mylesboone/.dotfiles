@@ -14,6 +14,7 @@ curl -fsSL https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 add_apt_source "/etc/apt/sources.list.d/docker.list" "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 curl -sSL https://dist.crystal-lang.org/apt/setup.sh | sudo bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo apt-get update
 
@@ -25,11 +26,15 @@ sudo apt-get install -y \
   ca-certificates \
   cmake \
   crystal \
+  containerd.io \
+  docker.io \
   docker-ce \
+  docker-ce-cli \
   enpass \
   exuberant-ctags \
   git-flow \
   gnupg2 \
+  gnupg-agent \
   htop \
   libappindicator1 \
   libevent-dev \
@@ -40,14 +45,18 @@ sudo apt-get install -y \
   libssl-dev \
   libtool-bin \
   libxt-dev \
+  make \
   npm \
   pgcli \
+  python-dev \
+  python3-dev \
   python-pip \
   python3-pip \
-  silversearcher-ag \
+  safe-rm \
   software-properties-common \
   sshfs \
   tig \
+  tmux \
   tree \
   urlview \
   xclip \
