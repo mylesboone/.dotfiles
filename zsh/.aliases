@@ -18,7 +18,7 @@ alias tmate="tmate -f ~/.tmate.conf"
 alias copyssh="xclip -sel clip < ~/.ssh/id_rsa.pub"
 
 #Docker
-alias drmi='docker rmi $(docker images -a -q)'
+alias drmi='docker rmi -f $(docker images -a -q)'
 alias drmc='docker rm $(docker ps -a -f status=exited -q)'
 alias drmv='docker volume prune'
 alias dc="drmc; drmi; drmv"
