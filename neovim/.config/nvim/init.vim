@@ -35,7 +35,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'thoughtbot/vim-rspec'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-ruby/vim-ruby'
@@ -47,8 +46,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fishbullet/deoplete-ruby'
 Plug 'FooSoft/vim-argwrap'
 call plug#end()
 set background=dark
@@ -61,7 +58,6 @@ command! -bang -nargs=* Find
       \ )
 
 let g:python3_host_prog = '/usr/bin/python3.6'
-let g:deoplete#enable_at_startup = 1
 let g:NERDTreeWinSize=30
 
 au BufWritePost *.rb :call jobstart('ctags')
@@ -81,6 +77,7 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <leader>ff :Find<space>
 nnoremap <leader>fs :Find<space><c-R><c-W><CR>
 nnoremap <leader>ft :Find<space><c-R>"<CR>
+nnoremap <CR> :noh<CR><CR> " cancel search by pressing return
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
