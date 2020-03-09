@@ -58,7 +58,6 @@ command! -bang -nargs=* Find
       \'rg --column  --no-heading --smart-case  --hidden --follow --glob  "!.git/*" --color "always" '.shellescape(<q-args>), 1
       \ )
 
-let g:python3_host_prog = '/usr/bin/python3.6'
 let g:NERDTreeWinSize=30
 
 au BufWritePost *.rb :call jobstart('ctags')
