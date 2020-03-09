@@ -78,6 +78,7 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <leader>ff :Find<space>
 nnoremap <leader>fs :Find<space><c-R><c-W><CR>
 nnoremap <leader>ft :Find<space><c-R>"<CR>
+nnoremap <CR> :noh<CR><CR> " cancel search by pressing return
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
