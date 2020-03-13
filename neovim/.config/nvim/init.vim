@@ -48,6 +48,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
 Plug 'FooSoft/vim-argwrap'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 set background=dark
 let base16colorspace=256
@@ -234,3 +235,4 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\ %{&fileformat}
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+set updatetime=300
