@@ -10,3 +10,4 @@ stow -vv tig
 stow -vv tmux
 stow -vv tmate
 stow -vv zsh
+stow -vv i3
