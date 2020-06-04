@@ -50,6 +50,19 @@ bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
+
+[battery]
+label=Bat
+interval=30
+command=~/.config/i3/scripts/battery
+
+[volume]
+label=Vol
+instance=Master
+interval=1
+signal=10
+urgent=30
+command=~/.config/i3/scripts/volume
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
@@ -162,9 +175,48 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+
+set $base00 #3B3228
+set $base01 #534636
+set $base02 #645240
+set $base03 #7e705a
+set $base04 #b8afad
+set $base05 #d0c8c6
+set $base06 #e9e1dd
+set $base07 #f5eeeb
+set $base08 #cb6077
+set $base09 #d28b71
+set $base0A #f4bc87
+set $base0B #beb55b
+set $base0C #7bbda4
+set $base0D #8ab3b5
+set $base0E #a89bb9
+set $base0F #bb9584
+
+#                       border      background  text        indicator
+client.focused          $base0d     $base0d     $base00     $base01
+client.focused_inactive $base02     $base02     $base03     $base01
+client.unfocused        $base01     $base01     $base03     $base01
+client.urgent           $base04     $base08     $base07     $base08
+
 bar {
-        status_command i3status
-        position top
+  position top
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    colors {
+      background #002b36
+      statusline #839496
+      separator  #586e75
+      focused_workspace  #b58900 #b58900 #002b36
+      active_workspace   #586e75 #586e75 #002b36
+      inactive_workspace #073642 #002b36 #839496
+      urgent_workspace   #dc322f #dc322f #fdf6e3
+    }
 }
+
+
+client.focused          #002b36 #586e75 #fdf6e3 #268bd2
+client.focused_inactive #002b36 #073642 #839496 #073642
+client.unfocused        #002b36 #073642 #839496 #073642
+client.urgent           #002b36 #dc322f #fdf6e3 #002b36
