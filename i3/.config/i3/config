@@ -50,19 +50,6 @@ bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
-
-[battery]
-label=Bat
-interval=30
-command=~/.config/i3/scripts/battery
-
-[volume]
-label=Vol
-instance=Master
-interval=1
-signal=10
-urgent=30
-command=~/.config/i3/scripts/volume
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
