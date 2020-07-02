@@ -42,6 +42,8 @@ bindsym $mod+d exec rofi -show drun
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+exec --no-startup-id /home/myles/.config/i3/monitors.sh
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
