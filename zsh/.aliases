@@ -22,8 +22,6 @@ alias drmi='docker rmi -f $(docker images -a -q)'
 alias drmc='docker rm $(docker ps -a -f status=exited -q)'
 alias drmv='docker volume prune'
 alias dc="drmc; drmi; drmv"
-alias dbackground="docker-compose run web bundle exec rake resque:work QUEUE=*"
-alias dscheduler="docker-compose run web bundle exec rake resque:scheduler"
 
 #safe remove
 alias rm="safe-rm"
