@@ -49,6 +49,7 @@ Plug 'tpope/vim-endwise'
 Plug 'FooSoft/vim-argwrap'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'digitaltoad/vim-pug'
+Plug 'unblevable/quick-scope'
 call plug#end()
 set background=dark
 let base16colorspace=256
