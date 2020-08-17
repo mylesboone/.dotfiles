@@ -237,3 +237,18 @@ set statusline+=\ %{&fileformat}
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set updatetime=300
+
+
+" Vue `gf` for components
+function! Dashcase(word)
+  let word = substitute(a:word,'::','/','g')
+  let word = substitute(word,'\(\u\+\)\(\u\l\)','\1_\2','g')
+  let word = substitute(word,'\(\l\|\d\)\(\u\)','\1_\2','g')
+  let word = substitute(word,'[.-]','_','g')
+  let word = tolower(word)
+  let word = substitute(word,'_','-','g')
+  return word
+endfunction
+set suffixesadd=.vue
+set includeexpr=Dashcase(v:fname)
+set path=.,app/javascript/**
