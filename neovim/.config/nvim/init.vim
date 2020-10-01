@@ -251,4 +251,4 @@ function! Dashcase(word)
 endfunction
 set suffixesadd=.vue
 set includeexpr=Dashcase(v:fname)
-set path=.,app/javascript/**
+set path=.,app/javascript/**,frontend/src/**
