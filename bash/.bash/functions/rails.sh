@@ -7,7 +7,7 @@ docker_or_local() {
 }
 
 rl() {
-  docker_or_local "bundle exec rake routes" | ag $1
+  docker_or_local "bundle exec rails routes" | ag $1
 }
 
 be() {
