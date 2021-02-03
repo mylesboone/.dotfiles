@@ -21,6 +21,6 @@ pmit() { docker_or_local "bundle exec rake parallel:migrate[$RSPEC_CORES]" }
 dwork() { docker_or_local "bundle exec rake resque:work QUEUE=*" }
 dschedule() { docker_or_local "bundle exec rake resque:scheduler" }
 
-rl() { docker_or_local "bundle exec rake routes" | rg $1 }
+rl() { docker_or_local "bundle exec rails routes" | rg $1 }
 
 edit_credentials() { docker_or_local "apt-get install -y vim && EDITOR=vim bundle exec rails credentials:edit --environment=$@" }
