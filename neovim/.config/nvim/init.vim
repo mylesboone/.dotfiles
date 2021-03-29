@@ -79,6 +79,7 @@ nnoremap <leader>ff :Find<space>
 nnoremap <leader>fs :Find<space><c-R><c-W><CR>
 nnoremap <leader>ft :Find<space><c-R>"<CR>
 nnoremap <CR> :noh<CR><CR> " cancel search by pressing return
+nnoremap <leader>w :update<CR>
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
