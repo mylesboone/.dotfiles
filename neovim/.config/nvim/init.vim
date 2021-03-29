@@ -69,7 +69,7 @@ inoremap jq <Esc>:wq<cr>
 inoremap jw <Esc>:w<cr>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <leader>b :Buffer<CR>
-nnoremap <leader>/ :Files<CR>
+nnoremap <leader>l :Files<CR>
 nnoremap <leader>g :GFiles?<CR>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
@@ -79,17 +79,15 @@ nnoremap <leader>ff :Find<space>
 nnoremap <leader>fs :Find<space><c-R><c-W><CR>
 nnoremap <leader>ft :Find<space><c-R>"<CR>
 nnoremap <CR> :noh<CR><CR> " cancel search by pressing return
-nnoremap jq :wq<cr>
-nnoremap jw :w<cr>
+nnoremap <leader>q :wq<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>vs :vs<cr>
 
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
 nnoremap <leader>m :Emodel<CR>
 nnoremap <leader>v :Eview<CR>
 nnoremap <leader>u :Eunittest<CR>
-
-" Close the buffer and reuse the window for an existing buffer
-nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "format entire file
 nnoremap <leader><tab> mtgg=G`t
