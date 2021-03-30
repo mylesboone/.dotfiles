@@ -69,7 +69,7 @@ inoremap jq <Esc>:wq<cr>
 inoremap jw <Esc>:w<cr>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <leader>b :Buffer<CR>
-nnoremap <leader>l :Files<CR>
+nnoremap <leader>k :Files<CR>
 nnoremap <leader>g :GFiles?<CR>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
