@@ -83,6 +83,10 @@ nnoremap <leader>q :wq<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>vs :vs<cr>
 
+"Find recenter
+nnoremap n nzz
+nnoremap N Nzz
+
 "Rails file navigation
 nnoremap <leader>c :Econtroller<CR>
 nnoremap <leader>m :Emodel<CR>
