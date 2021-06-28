@@ -26,7 +26,9 @@ set splitright
 set splitbelow
 set undofile
 set undodir=~/.config/nvim/undodir
+set backupcopy=yes
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-vinegar'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-surround'
 Plug 'kthibodeaux/tig.vim'
