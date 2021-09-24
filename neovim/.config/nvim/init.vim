@@ -58,8 +58,11 @@ colorscheme base16-default-dark
 
 command! -bang -nargs=* Find
       \ call fzf#vim#grep(
-      \'rg --column  --no-heading --smart-case  --hidden --follow --glob  "!.git/*" --color "always" '.shellescape(<q-args>), 1
+      \'rg --column  --no-heading --smart-case  --hidden --follow --glob  "!.git/*" --color "always" '.shellescape(<q-args>), 1,
+      \ fzf#vim#with_preview()
       \ )
+
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 let g:NERDTreeWinSize=30
 
