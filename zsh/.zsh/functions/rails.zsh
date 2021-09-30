@@ -23,4 +23,4 @@ dschedule() { docker_or_local "bundle exec rake resque:scheduler" }
 
 rl() { docker_or_local "bundle exec rails routes" | rg $1 }
 
-edit_credentials() { docker_or_local "apt-get install -y vim && EDITOR=vim bundle exec rails credentials:edit --environment=$@" }
+edit_credentials() { docker_or_local "apt-get install -y neovim && EDITOR=nvim bundle exec rails credentials:edit --environment=$@" }
