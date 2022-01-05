@@ -1,5 +1,3 @@
-# vim:foldmethod=indent:foldlevel=0
-
 ya() { docker_or_local "yarn $@" }
 
 be() { docker_or_local "bundle exec $@" }
