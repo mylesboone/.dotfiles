@@ -27,7 +27,7 @@ clean_testdb() {
   docker_or_local "bundle exec rake db:drop db:setup"
 }
 pclean_testdb() {
-  docker_or_local "bundle exec rake parallel:drop[8] parallel:setup[8]"
+  docker_or_local "bundle exec rake parallel:drop[4] parallel:setup[4]"
 }
 
 ber() {
@@ -37,7 +37,7 @@ bes() {
   docker_or_local "bundle exec rspec $@"
 }
 bep() {
-  docker_or_local "bundle exec rake parallel:spec[8]"
+  docker_or_local "bundle exec rake parallel:spec[4]"
 }
 
 mi() {
@@ -47,5 +47,5 @@ mit() {
   docker_or_local "bundle exec rake db:migrate"
 }
 pmit() {
-  docker_or_local "bundle exec rake parallel:migrate[8]"
+  docker_or_local "bundle exec rake parallel:migrate[4]"
 }
