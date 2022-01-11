@@ -29,6 +29,7 @@ sudo apt-get install -y \
   cmake \
   containerd.io \
   docker \
+  docker-ce \
   docker-compose \
   enpass \
   exuberant-ctags \
