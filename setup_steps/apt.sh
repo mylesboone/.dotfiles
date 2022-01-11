@@ -28,6 +28,8 @@ sudo apt-get install -y \
   ca-certificates \
   cmake \
   containerd.io \
+  docker \
+  docker-compose \
   enpass \
   exuberant-ctags \
   fzf \
