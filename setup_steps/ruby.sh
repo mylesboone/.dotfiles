@@ -42,4 +42,4 @@ install_ruby_install() {
 
 install_chruby
 install_ruby_install
-install_ruby "2.6.3"
+install_ruby "2.7.3"

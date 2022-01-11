@@ -27,13 +27,10 @@ sudo apt-get install -y \
   build-essential \
   ca-certificates \
   cmake \
-  crystal \
   containerd.io \
-  docker.io \
-  docker-ce \
-  docker-ce-cli \
   enpass \
   exuberant-ctags \
+  fzf \
   git-flow \
   gnupg2 \
   gnupg-agent \
@@ -48,11 +45,10 @@ sudo apt-get install -y \
   libtool-bin \
   libxt-dev \
   make \
+  neovim \
   npm \
   pgcli \
-  python-dev \
   python3-dev \
-  python-pip \
   python3-pip \
   safe-rm \
   software-properties-common \

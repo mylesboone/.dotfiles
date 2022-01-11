@@ -44,7 +44,7 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
-[ -f /usr/local/share/chruby/chruby.sh ] && chruby ruby-2.6.3
+[ -f /usr/local/share/chruby/chruby.sh ] && chruby ruby-2.7.3
 
 opentmux
 
