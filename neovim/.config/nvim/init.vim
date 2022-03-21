@@ -28,6 +28,7 @@ set undofile
 set undodir=~/.config/nvim/undodir
 set backupcopy=yes
 call plug#begin('~/.config/nvim/plugged')
+Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-vinegar'
 Plug 'posva/vim-vue'
 Plug 'tpope/vim-surround'
@@ -261,3 +262,5 @@ endfunction
 set suffixesadd=.vue
 set includeexpr=Dashcase(v:fname)
 set path=.,app/javascript/**,frontend/src/**
+
+command! -nargs=0 FixRailsDBStructure :normal G?>>>>>>><CR>dd?=======<CR>dd?|||||||<CR>dd?<<<<<<<<CR>jVG?;<CR>:s/;/,/g<CR>?<<<<<CR>jVG?,<CR>:sort u<CR>G?,<CR>r;?<<<<<<<<CR>dd:wq<CR>
