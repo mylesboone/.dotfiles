@@ -263,4 +263,5 @@ set suffixesadd=.vue
 set includeexpr=Dashcase(v:fname)
 set path=.,app/javascript/**,frontend/src/**
 
-command! -nargs=0 FixRailsDBStructure :normal G?>>>>>>><CR>dd?=======<CR>dd?|||||||<CR>dd?<<<<<<<<CR>jVG?;<CR>:s/;/,/g<CR>?<<<<<CR>jVG?,<CR>:sort u<CR>G?,<CR>r;?<<<<<<<<CR>dd:wq<CR>
+" command! -nargs=0 FixRailsDBStructure :normal G?><CR>dd?=<CR>dd?|<CR>dd?<CR>jVG?;<CR>:s/;/,/g<CR>?<CR>jVG?,<CR>:sort u<CR>G?,<CR>r;?<CR>dd:wq<CR>
+command! -nargs=0 FixRailsDBStructure :normal G?HEAD<CR>maG?><CR>V`a:s/;/,/g<CR>`ajGVG?>><CR>:g!/^[(]/d<CR>`addVG?,<CR>:sort u<CR>G?,<CR>r;:wq<CR>
