@@ -1,4 +1,4 @@
 if $TMUX =~ 'tmate'
-  colorscheme slate
+  colorscheme default
   set colorcolumn=400
 endif
