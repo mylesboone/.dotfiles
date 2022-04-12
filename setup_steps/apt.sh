@@ -34,6 +34,7 @@ sudo apt-get install -y \
   enpass \
   exuberant-ctags \
   fzf \
+  ripgrep \
   git-flow \
   gnupg2 \
   gnupg-agent \
