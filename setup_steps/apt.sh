@@ -58,6 +58,7 @@ sudo apt-get install -y \
   software-properties-common \
   sshfs \
   tig \
+  tmate \
   tmux \
   tree \
   urlview \
