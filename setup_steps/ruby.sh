@@ -30,9 +30,9 @@ install_chruby() {
 install_ruby_install() {
   if ! [ "$(command -v ruby-install)" ]; then
     cd ~/src
-    wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz
-    tar -xzvf ruby-install-0.6.1.tar.gz
-    cd ruby-install-0.6.1/
+    wget -O ruby-install-0.8.5.tar.gz https://github.com/postmodern/ruby-install/archive/v0.8.5.tar.gz
+    tar -xzvf ruby-install-0.8.5.tar.gz
+    cd ruby-install-0.8.5/
     sudo make install
     cd -
   else
@@ -42,4 +42,4 @@ install_ruby_install() {
 
 install_chruby
 install_ruby_install
-install_ruby "2.7.3"
+install_ruby "3.1.2"

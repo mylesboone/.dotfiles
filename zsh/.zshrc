@@ -46,7 +46,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
 [ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
-[ -f /usr/local/share/chruby/chruby.sh ] && chruby ruby-2.7.3
+[ -f /usr/local/share/chruby/chruby.sh ] && chruby ruby-3.1.2
 
 opentmux
 
