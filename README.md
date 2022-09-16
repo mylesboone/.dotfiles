@@ -14,3 +14,9 @@ Then, clone this repo to `~/`
 Then, `. ~/.dotfiles/setup`
 
 Follow all commands until finished.
+
+Then
+`gem install rubocop`
+`gem install solargraph`
+
+in Baldwin: `./.githooks/post-checkout`
