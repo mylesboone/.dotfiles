@@ -30,7 +30,7 @@ sudo apt-get install -y \
   containerd.io \
   docker \
   docker-ce \
-  docker-compose \
+  docker-compose-plugin \
   enpass \
   exuberant-ctags \
   fzf \

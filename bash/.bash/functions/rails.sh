@@ -1,6 +1,6 @@
 docker_or_local() {
   if [[ -f docker-compose.yml ]]; then
-    eval "docker-compose run --rm --no-deps -e SKIP_SIMPLECOV=true web $@"
+    eval "docker compose run --rm --no-deps -e SKIP_SIMPLECOV=true web $@"
   else
     eval "SKIP_SIMPLECOV=true $@"
   fi
