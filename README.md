@@ -1,7 +1,7 @@
 ## TO GET STARTED
 This install assumes Ubuntu 22.04
 
-Transfer wanted files, .local files (.zshrc.local, etc), .wf.yml, .github_tokens and histories (.zsh_history, etc) from old computer
+Transfer wanted files (credentials keys!), .aws dir, .local files (.zshrc.local, etc), .wf.yml, .github_tokens and histories (.zsh_history, etc) from old computer
 
 Transfer .ssh directory
 
