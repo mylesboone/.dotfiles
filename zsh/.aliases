@@ -7,6 +7,9 @@ alias bw='cd ~/Documents/baldwin-web'
 alias stash="git stash --include-untracked"
 alias pop="git stash pop"
 
+alias cup="docker compose up"
+alias cdown="docker compose down"
+
 alias n='nvim'
 alias vu="nvim +PlugInstall"
 alias vrc="nvim ~/.dotfiles/neovim/.config/nvim/init.vim"
