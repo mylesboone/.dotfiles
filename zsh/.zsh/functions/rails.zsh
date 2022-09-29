@@ -9,7 +9,7 @@ clean_testdb() { docker_or_local "bundle exec rake db:drop db:create db:schema:l
 pclean_testdb() { docker_or_local "bundle exec rake parallel:drop[$RSPEC_CORES] parallel:setup[$RSPEC_CORES] RAILS_ENV=test" }
 
 ber() { docker_or_local "bundle exec rails $@" }
-bes() { docker_or_local "bundle exec rspec $@" }
+bes() { docker_or_local "RAILS_ENV=test bundle exec rspec $@" }
 bep() { docker_or_local "bundle exec rake parallel:spec[$RSPEC_CORES] RAILS_ENV=test" }
 
 mi() { docker_or_local "bundle exec rake db:migrate RAILS_ENV=development" }
