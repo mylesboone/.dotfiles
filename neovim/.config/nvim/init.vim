@@ -47,7 +47,6 @@ Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'FooSoft/vim-argwrap'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -174,6 +173,7 @@ let g:coc_global_extensions = [
       \'coc-solargraph',
       \'coc-tsserver',
       \'coc-vetur',
+      \'coc-pairs',
       \'coc-yaml',
       \]
 " }}}
