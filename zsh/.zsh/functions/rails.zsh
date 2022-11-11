@@ -4,8 +4,7 @@ be() { docker_or_local "bundle exec $@" }
 bu() { docker_or_local "bundle update $@" }
 bi() { docker_or_local "bundle install $@" }
 
-clean_devdb() { docker_or_local "bundle exec rake db:drop db:setup RAILS_ENV=development" }
-clean_testdb() { docker_or_local "bundle exec rake db:drop db:create db:schema:load RAILS_ENV=test" }
+clean_testdb() { docker_or_local "bundle exec rake db:reset RAILS_ENV=test" }
 pclean_testdb() { docker_or_local "bundle exec rake parallel:drop[$RSPEC_CORES] parallel:setup[$RSPEC_CORES] RAILS_ENV=test" }
 
 ber() { docker_or_local "bundle exec rails $@" }
