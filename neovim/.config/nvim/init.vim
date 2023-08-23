@@ -55,6 +55,7 @@ call plug#end()
 set background=dark
 let base16colorspace=256
 colorscheme base16-default-dark
+set termguicolors
 
 command! -bang -nargs=* Find
       \ call fzf#vim#grep(
