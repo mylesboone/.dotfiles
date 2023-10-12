@@ -16,7 +16,6 @@ alias vrc="nvim ~/.dotfiles/neovim/.config/nvim/init.vim"
 alias dot='cd ~/.dotfiles/'
 
 alias t="tmux"
-alias tmate="tmate -f ~/.tmate.conf"
 
 alias copyssh="xclip -sel clip < ~/.ssh/id_rsa.pub"
 
