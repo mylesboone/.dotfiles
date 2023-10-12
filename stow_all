@@ -4,7 +4,6 @@ stow -vv gem
 stow -vv git
 stow -vv i3
 stow -vv neovim
-stow -vv reek
 stow -vv rspec
 stow -vv tig
 stow -vv tmux
