@@ -48,7 +48,6 @@ sudo apt-get install -y \
   libtool-bin \
   libxt-dev \
   make \
-  neovim \
   npm \
   pgcli \
   python3-dev \
