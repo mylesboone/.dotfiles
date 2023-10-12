@@ -67,8 +67,6 @@ command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim
 
 let g:NERDTreeWinSize=30
 
-au BufWritePost *.rb :call jobstart('ctags')
-
 " Mappings
 inoremap jj <Esc>
 inoremap jq <Esc>:wq<cr>
