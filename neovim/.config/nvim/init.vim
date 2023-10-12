@@ -69,9 +69,6 @@ let g:NERDTreeWinSize=30
 
 " Mappings
 inoremap jj <Esc>
-inoremap jq <Esc>:wq<cr>
-inoremap jw <Esc>:w<cr>
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>k :Files<CR>
 nnoremap <leader>g :GFiles?<CR>
@@ -95,10 +92,6 @@ nnoremap N Nzz
 nnoremap <leader>c :Econtroller<CR>
 nnoremap <leader>m :Emodel<CR>
 nnoremap <leader>v :Eview<CR>
-nnoremap <leader>u :Eunittest<CR>
-
-"format entire file
-nnoremap <leader><tab> mtgg=G`t
 
 "tig and git mappings
 nnoremap <leader>vc :silent !tmux split-window -h "tig --follow %"<CR>
@@ -127,16 +120,16 @@ set rtp+=~/.fzf
 set hidden
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-   \ "Modified"  : "✹",
-   \ "Staged"    : "✚",
-   \ "Untracked" : "✭",
-   \ "Renamed"   : "➜",
-   \ "Unmerged"  : "═",
-   \ "Deleted"   : ":heavy_multiplication_x:",
-   \ "Dirty"     : "✗",
-   \ "Clean"     : "✔",
-   \ "Unknown"   : "?"
-   \ }
+      \ "Modified"  : "✹",
+      \ "Staged"    : "✚",
+      \ "Untracked" : "✭",
+      \ "Renamed"   : "➜",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : ":heavy_multiplication_x:",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔",
+      \ "Unknown"   : "?"
+      \ }
 
 let g:ruby_indent_block_style= 'do'
 
@@ -155,7 +148,7 @@ nmap <leader>lc <Plug>UseColemakNavigation
 
 "COC
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
