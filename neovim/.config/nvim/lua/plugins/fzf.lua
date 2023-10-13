@@ -14,7 +14,7 @@ return {
     })
   end,
   keys = {
-    { '<leader>gg', "<cmd>lua require('fzf-lua').git_status()<CR>", desc = 'find git file' },
+    { '<leader>gg', "<cmd>lua require('fzf-lua').git_files({ cmd = 'git ls-files --modified' })<CR>", desc = 'git changes' },
     { '<leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>", desc = 'find buffer' },
     { '<leader>k', "<cmd>lua require('fzf-lua').files()<CR>", desc = 'find file' },
     { '<leader>ff', "<cmd>lua require('fzf-lua').grep({ no_esc=true })<CR>", desc = 'grep' },
