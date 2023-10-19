@@ -18,7 +18,7 @@ return {
   {
     'tpope/vim-rails',
     lazy = true,
-    ft = 'ruby',
+    ft = {'slim', 'ruby'},
   },
   {
     'rhysd/vim-textobj-ruby',
