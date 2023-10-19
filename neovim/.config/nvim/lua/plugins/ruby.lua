@@ -26,4 +26,7 @@ return {
       'kana/vim-textobj-user'
     },
   },
+  {
+    'slim-template/vim-slim',
+  },
 }
