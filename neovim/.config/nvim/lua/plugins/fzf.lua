@@ -5,8 +5,16 @@ return {
   },
   config = function()
     require('fzf-lua').setup({
-      'telescope',
-      fzf_opts = { ["--layout"] = "reverse" },
+      'default',
+      winopts    = {
+        width   = 1,
+        height  = 1,
+        preview = {
+          hidden       = "nohidden",
+          vertical     = "up:70%",
+          horizontal   = "up:70%",
+        },
+      },
       grep = {
         rg_opts = "--sort-files --hidden --column --line-number --no-heading " ..
         "--color=always --smart-case -g '!{.git,node_modules}/*'",
@@ -14,7 +22,7 @@ return {
     })
   end,
   keys = {
-    { '<leader>gg', "<cmd>lua require('fzf-lua').git_files({ cmd = 'git ls-files --modified' })<CR>", desc = 'git changes' },
+    { '<leader>gg', "<cmd>lua require('fzf-lua').git_status()<CR>", desc = 'git changes' },
     { '<leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>", desc = 'find buffer' },
     { '<leader>k', "<cmd>lua require('fzf-lua').files()<CR>", desc = 'find file' },
     { '<leader>ff', "<cmd>lua require('fzf-lua').grep({ no_esc=true })<CR>", desc = 'grep' },
