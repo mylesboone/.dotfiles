@@ -32,6 +32,7 @@ sudo apt-get install -y \
   docker-ce \
   docker-compose-plugin \
   enpass \
+  fd-find \
   fzf \
   ripgrep \
   git-flow \
