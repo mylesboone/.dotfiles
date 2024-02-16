@@ -9,6 +9,7 @@ function opentmux() {
         return 1
         ;;
       [pP])
+        rm ~/.upterm/*.sock
         vared -p "Enter a session number, n for a new session " -c session_name
 
         if [ "$session_name" = "n" ]; then
