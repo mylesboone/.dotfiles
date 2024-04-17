@@ -27,7 +27,7 @@
   "qfview.nvim": { "branch": "main", "commit": "f7a4fd8d700d02f6c1274f02115fa4e68e63aa54" },
   "quick-scope": { "branch": "master", "commit": "256d81e391a22eeb53791ff62ce65f870418fa71" },
   "splitjoin.vim": { "branch": "main", "commit": "53962443e4dc557e4d4c02b501adfcb5cd1368c3" },
-  "tig.vim": { "branch": "master", "commit": "b7bc27391a6e236ce979d5c22c35e13af137d507" },
+  "tig.vim": { "branch": "master", "commit": "33c0ea68972f0631ef01604c9e33b798ebc8a911" },
   "undotree": { "branch": "master", "commit": "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" },
   "vcs-jump": { "branch": "main", "commit": "d12559334985ec8fd4dda729cda20ae540b2b9c8" },
   "vim-abolish": { "branch": "master", "commit": "dcbfe065297d31823561ba787f51056c147aa682" },
