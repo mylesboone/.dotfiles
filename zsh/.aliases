@@ -11,7 +11,6 @@ alias cup="docker compose up"
 alias cdown="docker compose down"
 
 alias n='nvim'
-alias vu="nvim +PlugInstall"
 alias vrc="nvim ~/.dotfiles/neovim/.config/nvim/init.vim"
 alias dot='cd ~/.dotfiles/'
 
@@ -33,10 +32,23 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias push='git push; git push --follow-tags; git checkout master; git push; git checkout develop'
-
 alias fixstructure='nvim +FixRailsDBStructure db/structure.sql; git add db/structure.sql'
+
+alias be="bundle exec"
+alias bu="bundle update"
+alias bi="bundle install"
+
+alias ber="bundle exec rails"
+alias bes="bundle exec rspec"
+alias bep="bundle exec rake parallel:spec[$RSPEC_CORES] RAILS_ENV=test"
+
+alias mi="bundle exec rake db:migrate RAILS_ENV=development"
+
+alias clean_devdb="bundle exec rake db:drop db:setup RAILS_ENV=development"
+alias clean_testdb="bundle exec rake db:drop db:setup RAILS_ENV=test"
+alias pclean_testdb="bundle exec rake parallel:drop[$RSPEC_CORES] parallel:setup[$RSPEC_CORES] RAILS_ENV=test"
+
+alias dwork="bundle exec rake resque:work QUEUE=*"
+dschedule="bundle exec rake resque:scheduler"
+
+alias rl="bundle exec rails routes | rg"
