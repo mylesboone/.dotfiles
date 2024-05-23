@@ -1,6 +1,8 @@
 base_branch() {
   if git rev-parse -q --verify develop > /dev/null; then
     echo "develop"
+  elif git rev-parse -q --verify master > /dev/null; then
+    echo "main"
   else
     echo "master"
   fi
@@ -59,7 +61,7 @@ gbD() {
 }
 
 dev() {
-  git checkout develop && git up
+  git checkout develop && git pull --rebase --autostash
 }
 
 hotfix() {
@@ -117,6 +119,12 @@ changes() {
 
 clean_branches() {
   git branch --merged origin/develop | grep -v master | grep -v develop | xargs git branch -d
+}
+
+pa () {
+  root_dir=$(pwd)
+  ls -1 -d */ --indicator-style=none --color=never | xargs -I{} sh -c "echo {} && cd $root_dir/{} && git pull --rebase --autostash"
+  cd $root_dir
 }
 
 # Complete g like git
