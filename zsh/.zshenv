@@ -16,3 +16,5 @@ export FZF_COMPLETION_TRIGGER=',,'
 
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local ]]
 export NODE_OPTIONS="--max-old-space-size=8192"
+
+if [ -e /home/myles/.nix-profile/etc/profile.d/nix.sh ]; then . /home/myles/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
