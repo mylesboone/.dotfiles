@@ -3,6 +3,7 @@ alias opti='cd ~/Documents/agopti'
 alias pigouts='cd ~/Documents/pigouts'
 alias quote4='cd ~/Documents/quote4'
 alias pp='cd ~/Documents/prizepicks'
+alias ppd='cd ~/Documents/prizepicks-devex'
 
 alias stash="git stash --include-untracked"
 alias pop="git stash pop"

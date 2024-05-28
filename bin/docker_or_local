@@ -8,6 +8,10 @@ def force_local?
   ARGV.include?('--force-local')
 end
 
+def prizepicks_devex?
+  @is_prizepicks_devex ||= Dir.pwd.include?('prizepicks-devex')
+end
+
 def prizepicks?
   @is_prizepicks ||= Dir.pwd.include?('prizepicks')
 end
@@ -38,6 +42,8 @@ if force_local?
   puts
 
   system COMMAND
+elsif prizepicks_devex?
+  system "#{ENV['HOME']}/Documents/prizepicks-devex/prizepicks-devex-devenv/scripts/run_in_container \"#{COMMAND}\""
 elsif prizepicks?
   system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devenv/scripts/run_in_container \"#{COMMAND}\""
 elsif use_docker?
