@@ -1,7 +1,7 @@
 base_branch() {
   if git rev-parse -q --verify develop > /dev/null; then
     echo "develop"
-  elif git rev-parse -q --verify master > /dev/null; then
+  elif git rev-parse -q --verify main > /dev/null; then
     echo "main"
   else
     echo "master"
@@ -118,7 +118,7 @@ changes() {
 }
 
 clean_branches() {
-  git branch --merged origin/develop | grep -v master | grep -v develop | xargs git branch -d
+  git branch --merged origin/$(base_branch) | grep -v master | grep -v develop | grep -v main | xargs git branch -d
 }
 
 pa () {
