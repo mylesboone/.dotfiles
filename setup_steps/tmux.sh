@@ -1,10 +1,10 @@
-if [ -d ~/src/tmux-2.7 ]; then
+if [ -d ~/src/tmux-3.4 ]; then
   echo "skipping install tmux: already installed"
 else
   cd ~/src
-  wget https://github.com/tmux/tmux/releases/download/2.7/tmux-2.7.tar.gz
-  tar xvzf tmux-2.7.tar.gz
-  cd tmux-2.7
+  wget https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
+  tar xvzf tmux-3.4.tar.gz
+  cd tmux-3.4
   ./configure && make && sudo make install
   cd ~
 fi
