@@ -22,7 +22,7 @@
   autosquash=true
 [merge]
   tool = vimdiff
-  conflictstyle = zdiff3
+  conflictstyle = diff3
 [mergetool "vimdiff"]
   path = nvim
 [color]
