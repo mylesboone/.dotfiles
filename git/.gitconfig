@@ -12,6 +12,7 @@
   co = checkout
   ci = commit -v
   unstage = reset HEAD --
+  iquit = !git reset --hard && git clean -fd
   last = log -1 HEAD
   br = branch
   short-log = log --pretty=format:'%C(yellow)%h%Creset %s'
