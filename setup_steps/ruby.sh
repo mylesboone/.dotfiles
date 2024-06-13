@@ -41,4 +41,4 @@ install_ruby_install() {
 
 install_chruby
 install_ruby_install
-install_ruby "3.1.2"
+install_ruby "3.3.3"
