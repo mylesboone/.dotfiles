@@ -60,25 +60,9 @@ gbD() {
   fi
 }
 
-dev() {
-  git checkout develop && git pull --rebase --autostash
+bb() {
+  git checkout $(base_branch) && git pull --rebase --autostash
 }
-
-hotfix() {
-  branch=$(echo "$@" | tr ' ' '-')
-  git checkout master && git up && git checkout -b "hotfix/$branch"
-}
-
-feature() {
-  branch=$(echo "$@" | tr ' ' '-')
-  dev && git checkout -b "feature/$branch"
-}
-
-support() {
-  branch=$(echo "$@" | tr ' ' '-')
-  dev && git checkout -b "support/$branch"
-}
-
 
 ir() {
   if [[ $# > 0 ]]; then
@@ -121,9 +105,9 @@ clean_branches() {
   git branch --merged origin/$(base_branch) | grep -v master | grep -v develop | grep -v main | xargs git branch -d
 }
 
-pa () {
+pa() {
   root_dir=$(pwd)
-  ls -1 -d */ --indicator-style=none --color=never | xargs -I{} sh -c "echo {} && cd $root_dir/{} && git pull --rebase --autostash"
+  ls -1 -d */ --indicator-style=none --color=never | xargs -I{} sh -c "echo {} && cd $root_dir/{} && git co $(base_branch) && git pull --rebase --autostash"
   cd $root_dir
 }
 
