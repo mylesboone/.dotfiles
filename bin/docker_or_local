@@ -45,7 +45,7 @@ if force_local?
 elsif is_prizepicks_devex
   system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devex/prizepicks-devex-devenv/scripts/run_in_container \"#{COMMAND}\""
 elsif is_prizepicks
-  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks/prizepicks-devenv/scripts/run_in_container \"#{COMMAND}\""
+  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devenv/scripts/run_in_container \"#{COMMAND}\""
 elsif use_docker?
   command = COMMAND.split(' ')[0]
   container = use_config? ? config[command] || default_image : default_image

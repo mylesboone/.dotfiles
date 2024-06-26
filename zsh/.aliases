@@ -1,7 +1,7 @@
 #nvim and dot file
 alias opti='cd ~/Documents/personal/agopti'
 alias pp='cd ~/Documents/prizepicks'
-alias devenv='cd ~/Documents/prizepicks/prizepicks-devex'
+alias devenv='cd ~/Documents/prizepicks/prizepicks-devenv'
 alias bw='cd ~/Documents/baldwin'
 
 alias stash="git stash --include-untracked"
