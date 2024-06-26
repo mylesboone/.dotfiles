@@ -1,10 +1,8 @@
 #nvim and dot file
-alias opti='cd ~/Documents/agopti'
-alias pigouts='cd ~/Documents/pigouts'
-alias quote4='cd ~/Documents/quote4'
+alias opti='cd ~/Documents/personal/agopti'
 alias pp='cd ~/Documents/prizepicks'
-alias ppd='cd ~/Documents/prizepicks-devex'
-alias bw='cd ~/Documents/baldwin-web'
+alias devenv='cd ~/Documents/prizepicks/prizepicks-devex'
+alias bw='cd ~/Documents/baldwin'
 
 alias stash="git stash --include-untracked"
 alias pop="git stash pop"
@@ -13,7 +11,6 @@ alias cup="docker compose up"
 alias cdown="docker compose down"
 
 alias n='nvim'
-alias vrc="nvim ~/.dotfiles/neovim/.config/nvim/init.vim"
 alias dot='cd ~/.dotfiles/'
 
 alias t="tmux"

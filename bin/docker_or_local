@@ -8,11 +8,11 @@ def force_local?
   ARGV.include?('--force-local')
 end
 
-def prizepicks_devex?
-  @is_prizepicks_devex ||= Dir.pwd.include?('prizepicks-devex')
+def is_prizepicks_devex
+  @is_prizepicks_devex ||= Dir.pwd.include?('slackbot') && Dir.pwd.include?('release-manager')
 end
 
-def prizepicks?
+def is_prizepicks
   @is_prizepicks ||= Dir.pwd.include?('prizepicks')
 end
 
@@ -42,10 +42,10 @@ if force_local?
   puts
 
   system COMMAND
-elsif prizepicks_devex?
-  system "#{ENV['HOME']}/Documents/prizepicks-devex/prizepicks-devex-devenv/scripts/run_in_container \"#{COMMAND}\""
-elsif prizepicks?
-  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devenv/scripts/run_in_container \"#{COMMAND}\""
+elsif is_prizepicks_devex
+  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devex/prizepicks-devex-devenv/scripts/run_in_container \"#{COMMAND}\""
+elsif is_prizepicks
+  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks/prizepicks-devenv/scripts/run_in_container \"#{COMMAND}\""
 elsif use_docker?
   command = COMMAND.split(' ')[0]
   container = use_config? ? config[command] || default_image : default_image
