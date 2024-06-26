@@ -105,11 +105,5 @@ clean_branches() {
   git branch --merged origin/$(base_branch) | grep -v master | grep -v develop | grep -v main | xargs git branch -d
 }
 
-pa() {
-  root_dir=$(pwd)
-  ls -1 -d */ --indicator-style=none --color=never | xargs -I{} sh -c "echo {} && cd $root_dir/{} && git co $(base_branch) && git pull --rebase --autostash"
-  cd $root_dir
-}
-
 # Complete g like git
 compdef g=git

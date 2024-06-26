@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# vim:filetype=ruby
+
+def base_branch(path)
+  if !`cd #{path} && git rev-parse -q --verify main`.empty?
+    'main'
+  elsif !`cd #{path} && git rev-parse -q --verify master`.empty?
+    'master'
+  else
+    'develop'
+  end
+end
+
+Dir.glob("#{Dir.pwd}/*/").each do |path|
+  puts path[0..-2].rpartition('/').last
+  system "cd #{path} && git co #{base_branch(path)} && git pull --rebase --autostash"
+end
