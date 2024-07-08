@@ -10,6 +10,6 @@ end
 Dir.glob("#{Dir.pwd}/*/").each do |path|
   Dir.chdir(path) do
     puts path[0..-2].rpartition('/').last
-    system "git co #{base_branch} && git pull --rebase --autostash"
+    system "git co #{base_branch} && git up"
   end
 end

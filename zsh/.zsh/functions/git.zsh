@@ -61,7 +61,7 @@ gbD() {
 }
 
 bb() {
-  git checkout $(base_branch) && git pull --rebase --autostash
+  git checkout $(base_branch) && git up
 }
 
 ir() {
