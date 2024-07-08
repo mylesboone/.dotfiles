@@ -1,33 +1,42 @@
-[user]
-  name = Myles Boone
-  email = mylesboone@gmail.com
-[push]
-  default = current
-[core]
-  editor = nvim
-  excludesfile = ~/dotfiles/git/.gitignore
+[include]
+  path = ~/.gitconfig.local
+[alias]
+  aa = add --all
+  amend = commit --amend
+  co = checkout
+  iquit = !git reset --hard && git clean -fd
+  l = log --graph --abbrev-commit --date=relative
+  rc = rebase --continue
+  short-log = log --pretty=format:'%C(yellow)%h%Creset %s'
+  wip = !git add --all && git commit -m 'WIP' && git push
+  up = !git-up
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an %ae>%Creset
-[alias]
-  co = checkout
-  ci = commit -v
-  unstage = reset HEAD --
-  iquit = !git reset --hard && git clean -fd
-  last = log -1 HEAD
-  br = branch
-  short-log = log --pretty=format:'%C(yellow)%h%Creset %s'
-  st = status
-  dm = !git branch --merged origin/develop | grep -v master | grep -v develop | xargs git branch -d
-[rebase]
-  autostash=true
-  autosquash=true
-[merge]
-  tool = vimdiff
-  conflictstyle = diff3
-[mergetool "vimdiff"]
-  path = nvim
+[core]
+  editor = nvim
+  excludesfile = ~/.dotfiles/git/.gitignore
+  pager = less -+F
 [color]
   ui = true
 [diff]
   compactionHeuristic = true
   tool = vimdiff
+[push]
+  default = current
+  autoSetupRemote = true
+[fetch]
+  prune = true
+[pull]
+  default = current
+  rebase = true
+[rebase]
+  autostash = true
+  autosquash = true
+[merge]
+  tool = vimdiff
+  conflictstyle = zdiff3
+[mergetool "vimdiff"]
+  path = nvim
+[user]
+  name = Myles Boone
+  email = mylesboone@gmail.com
