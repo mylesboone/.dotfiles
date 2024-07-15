@@ -8,6 +8,10 @@ base_branch() {
   fi
 }
 
+dev() {
+  git checkout $(base_branch) && git up
+}
+
 g() {
   if [[ $# > 0 ]]; then
     git $@

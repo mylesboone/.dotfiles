@@ -1,3 +1,3 @@
 function next_story() {
-  wf --start-card --card $(wf --list-unstarted-cards | fzf-tmux | awk '{print $1;}')
+  ppwf --work-issue --issue $(ppwf --list-issues | fzf-tmux | awk '{print $1;}')
 }
