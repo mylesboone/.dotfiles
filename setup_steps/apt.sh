@@ -33,7 +33,6 @@ sudo apt-get install -y \
   docker-compose-plugin \
   enpass \
   fd-find \
-  fzf \
   ripgrep \
   git-flow \
   gnupg2 \

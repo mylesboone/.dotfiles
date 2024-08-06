@@ -11,8 +11,10 @@ export CLICOLOR=1
 # fzf to use ag
 #
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-
 export FZF_COMPLETION_TRIGGER=',,'
+if [ -n "$TMUX" ]; then
+  export FZF_DEFAULT_OPTS='--tmux 80%'
+fi
 
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local ]]
 export NODE_OPTIONS="--max-old-space-size=8192"

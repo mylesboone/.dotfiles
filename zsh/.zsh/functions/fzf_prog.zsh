@@ -2,6 +2,6 @@ fzf_prog(){
   if [ "$TMUX" = "" ]; then
     echo "fzf"
   else
-    echo "fzf-tmux"
+    echo "fzf --tmux"
   fi
 }

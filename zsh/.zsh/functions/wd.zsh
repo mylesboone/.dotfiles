@@ -7,7 +7,7 @@ function wd() {
       if [ "$TMUX" = "" ]; then
         destination=$(echo $files | fzf | sed 's/^.*: //' )
       else
-        destination=$(echo $files | fzf-tmux | sed 's/^.*: //' )
+        destination=$(echo $files | $(fzf-prog) | sed 's/^.*: //' )
       fi
 
       if [[ $destination != '' ]]; then
