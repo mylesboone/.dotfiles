@@ -39,7 +39,7 @@ alias bi="bundle install"
 
 alias ber="bundle exec rails"
 alias bes="bundle exec rspec"
-alias bep="bundle exec rake parallel:spec[$RSPEC_CORES] RAILS_ENV=test"
+alias bep="bundle exec rake parallel:spec[$RSPEC_CORES]"
 
 alias mi="bundle exec rake db:migrate RAILS_ENV=development"
 
