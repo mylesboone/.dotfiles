@@ -48,6 +48,6 @@ alias clean_testdb="bundle exec rake db:drop db:setup RAILS_ENV=test"
 alias pclean_testdb="bundle exec rake parallel:drop[$RSPEC_CORES] parallel:setup[$RSPEC_CORES]"
 
 alias dwork="bundle exec rake resque:work QUEUE=*"
-dschedule="bundle exec rake resque:scheduler"
+alias dschedule="bundle exec rake resque:scheduler"
 
 alias rl="bundle exec rails routes | rg"
