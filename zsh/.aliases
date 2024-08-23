@@ -1,9 +1,3 @@
-#nvim and dot file
-alias opti='cd ~/Documents/personal/agopti'
-alias pp='cd ~/Documents/prizepicks'
-alias devenv='cd ~/Documents/prizepicks/prizepicks-devenv'
-alias bw='cd ~/Documents/baldwin'
-
 alias stash="git stash --include-untracked"
 alias pop="git stash pop"
 
@@ -11,7 +5,6 @@ alias cup="docker compose up"
 alias cdown="docker compose down"
 
 alias n='nvim'
-alias dot='cd ~/.dotfiles/'
 
 alias t="tmux"
 
