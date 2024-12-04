@@ -6,5 +6,6 @@ stow -vv i3
 stow -vv neovim
 stow -vv rspec
 stow -vv tig
+stow -vv tmate
 stow -vv tmux
 stow -vv zsh
