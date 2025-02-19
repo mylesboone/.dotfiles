@@ -27,6 +27,7 @@ return {
     { '<leader>k', "<cmd>lua require('fzf-lua').files()<CR>", desc = 'find file' },
     { '<leader>ff', "<cmd>lua require('fzf-lua').grep({ no_esc=true })<CR>", desc = 'grep' },
     { '<leader>ff', "<cmd>lua require('fzf-lua').grep_visual()<CR>", mode = 'v', desc = 'grep visual selection' },
+    { '<leader>fl', "<cmd>lua require('fzf-lua').live_grep({ no_esc=true })<CR>", desc = 'live grep' },
     { '<leader>fs', "<cmd>lua require('fzf-lua').grep_cword()<CR>", desc = 'grep current word' },
   },
 }
