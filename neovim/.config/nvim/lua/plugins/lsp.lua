@@ -102,7 +102,6 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         sources = cmp.config.sources({
-          { name = "codeium" },
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
           { name = "luasnip" },
