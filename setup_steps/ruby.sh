@@ -6,9 +6,8 @@ install_ruby() {
     source /usr/local/share/chruby/chruby.sh
     chruby $1
     gem install bundler
-    gem install git-up
     gem install neovim
-    gem install rubocop
+    gem install ruby-lsp
   fi
   echo ""
 }
@@ -41,4 +40,4 @@ install_ruby_install() {
 
 install_chruby
 install_ruby_install
-install_ruby "3.3.3"
+install_ruby "3.4.1"

@@ -47,10 +47,4 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.fzf/shell/completion.zsh
 source $HOME/.fzf/shell/key-bindings.zsh
 
-[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
-[ -f /usr/local/share/chruby/chruby.sh ] && chruby ruby-3.1.2
-
 opentmux
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
