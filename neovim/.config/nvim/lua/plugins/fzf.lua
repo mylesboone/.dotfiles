@@ -18,7 +18,16 @@ return {
       grep = {
         rg_opts = "--sort-files --hidden --column --line-number --no-heading " ..
         "--color=always --smart-case -g '!{.git,node_modules}/*'",
-      }
+      },
+      keymap = {
+        builtin = {
+          ['<c-d>'] = 'preview-page-down',
+          ['<c-u>'] = 'preview-page-up',
+        },
+        fzf = {
+          ['ctrl-a'] = 'select-all+accept',
+        },
+      },
     })
   end,
   keys = {
