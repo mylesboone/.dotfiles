@@ -8,11 +8,7 @@ def force_local?
   ARGV.include?('--force-local')
 end
 
-def is_prizepicks_devex
-  @is_prizepicks_devex ||= Dir.pwd.include?('slackbot') && Dir.pwd.include?('release-manager')
-end
-
-def is_prizepicks
+def prizepicks?
   @is_prizepicks ||= Dir.pwd.include?('prizepicks')
 end
 
@@ -42,10 +38,23 @@ if force_local?
   puts
 
   system COMMAND
-elsif is_prizepicks_devex
-  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devex/prizepicks-devex-devenv/scripts/run_in_container \"#{COMMAND}\""
-elsif is_prizepicks
-  system "#{ENV['HOME']}/Documents/prizepicks/prizepicks-devenv/scripts/run_in_container \"#{COMMAND}\""
+elsif prizepicks?
+  current_directory = Dir.pwd.split('/').last
+
+  folder_map = %w[prizepicks-devenv].flat_map do |devenv_repo|
+    repo_list_path = "#{ENV['HOME']}/Documents/prizepicks/#{devenv_repo}/scripts/repository_list"
+    File.readlines(repo_list_path).map(&:strip).map { |repo| [repo, devenv_repo] }
+  end.to_h
+
+  if folder_map[current_directory]
+    system "#{ENV['HOME']}/Documents/prizepicks/#{folder_map[current_directory]}/scripts/run_in_container \"#{COMMAND}\""
+  else
+    puts "could not determine prizepicks devenv repo for #{current_directory}"
+    puts 'falling back to system'
+    puts
+
+    system COMMAND
+  end
 elsif use_docker?
   command = COMMAND.split(' ')[0]
   container = use_config? ? config[command] || default_image : default_image
