@@ -44,3 +44,4 @@ alias dwork="bundle exec rake resque:work QUEUE=*"
 alias dschedule="bundle exec rake resque:scheduler"
 
 alias rl="bundle exec rails routes | rg"
+alias play="/bin/bash -c '$(curl -fsSL https://ascii-arcade.games/play)'"
