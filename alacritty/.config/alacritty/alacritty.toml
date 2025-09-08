@@ -6,11 +6,13 @@ action = "Paste"
 key = "V"
 mods = "Control|Alt"
 
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "+"
+mods = "Control|Shift"
+
 [mouse]
 hide_when_typing = true
-
-[window]
-opacity = 0.95
 
 [font]
 size = 9.0
