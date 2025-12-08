@@ -11,12 +11,7 @@ sudo apt-get install stow
 . ~/.dotfiles/setup_steps/apt.sh
 . ~/.dotfiles/setup_steps/fzf.sh
 . ~/.dotfiles/setup_steps/snap.sh
-. ~/.dotfiles/setup_steps/pip3.sh
-. ~/.dotfiles/setup_steps/ruby.sh
 . ~/.dotfiles/setup_steps/shell.sh
-. ~/.dotfiles/setup_steps/tmux.sh
-. ~/.dotfiles/setup_steps/node.sh
-. ~/.dotfiles/setup_steps/upterm.sh
 
 sudo fc-cache -f
 sudo usermod -aG docker $USER

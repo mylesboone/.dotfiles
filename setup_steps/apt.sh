@@ -8,40 +8,36 @@ add_apt_source() {
 
 sudo apt-get update
 sudo apt-get install -y apt-transport-https curl
+sudo apt-get install -y ca-certificates curl gnupg
 
-curl -sSL https://dist.crystal-lang.org/apt/setup.sh | sudo bash
-
-add_apt_source "/etc/apt/sources.list.d/enpass.list" "deb http://repo.sinew.in/ stable main"
-curl -fsSL https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
-add_apt_source "/etc/apt/sources.list.d/docker.list" "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-curl -sSL https://dist.crystal-lang.org/apt/setup.sh | sudo bash
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
 
-sudo apt-get install -y \
+sudo aptitude install -y \
   automake \
   autotools-dev \
-  awscli \
   build-essential \
-  ca-certificates \
   cmake \
   containerd.io \
-  docker \
+  docker-buildx-plugin \
   docker-ce \
+  docker-ce-cli \
   docker-compose-plugin \
-  enpass \
   fd-find \
   ripgrep \
   git-flow \
   gnupg2 \
   gnupg-agent \
   htop \
-  libappindicator1 \
   libevent-dev \
   libcurl4-gnutls-dev \
-  libimlib2-dev \
   libncurses5-dev \
   libpq-dev \
   libssl-dev \

@@ -1,6 +1,9 @@
 [env]
 TERM = "xterm-256color"
 
+[terminal.shell]
+program = "/usr/bin/zsh"
+
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
@@ -10,9 +13,6 @@ mods = "Control|Alt"
 action = "IncreaseFontSize"
 key = "+"
 mods = "Control|Shift"
-
-[mouse]
-hide_when_typing = true
 
 [font]
 size = 9.0
@@ -104,3 +104,5 @@ blue = "#4a869c"
 magenta = "#a580d2"
 cyan = "#7bb8c1"
 white = "#b1acde"
+
+[terminal]
