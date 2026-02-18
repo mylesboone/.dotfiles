@@ -1,5 +1,3 @@
-TESTS_LAST_COMMAND = ""
-
 local function get_line_content(n)
   local l = vim.api.nvim_buf_get_lines(0, n - 1, n, false)
   return l[1] or ""
@@ -55,14 +53,9 @@ local function find_go_test_name()
   return nil
 end
 
-local function run_in_split(command)
-  TESTS_LAST_COMMAND = command
-  vim.cmd('silent !run_in_split ' .. command)
-end
-
 local go = {
   run_all = function()
-    run_in_split("go test ./...")
+    vim.cmd("VimuxRunCommand('go test ./...')")
   end,
   run_file = function()
     local filename = get_filename()
@@ -74,7 +67,7 @@ local go = {
       directory = directory:sub(1, #directory - 1)
     end
 
-    run_in_split('"go test -v ./' .. directory .. '"')
+    vim.cmd('VimuxRunCommand("go test -v ./' .. directory .. '")')
   end,
   run_nearest = function()
     local filename = get_filename()
@@ -89,39 +82,39 @@ local go = {
     local test_name = find_go_test_name()
 
     if test_name then
-      run_in_split('"go test -v ./' .. directory .. ' -run ' .. test_name .. '"')
+      vim.cmd('VimuxRunCommand("go test -v ./' .. directory .. ' -run ' .. test_name .. '")')
     else
-      run_in_split('"go test -v ./' .. directory .. '"')
+      vim.cmd('VimuxRunCommand("go test -v ./' .. directory .. '")')
     end
   end,
 }
 
 local js = {
   run_all = function()
-    run_in_split('yarn test')
+    vim.cmd("VimuxRunCommand('yarn test')")
   end,
   run_file = function()
     local filename = get_filename()
-    run_in_split('"yarn test ./' .. filename .. '"')
+    vim.cmd('VimuxRunCommand("yarn test ./' .. filename .. '")')
   end,
 }
 
 local rspec = {
   run_all = function()
-    run_in_split("bundle exec rspec")
+    vim.cmd("VimuxRunCommand('bundle exec rspec')")
   end,
   run_file = function()
     local filename = remove_until(ensure_spec(get_filename()), "spec")
-    run_in_split('"bundle exec rspec -f doc ./' .. filename .. '"')
+    vim.cmd('VimuxRunCommand("bundle exec rspec -f doc ./' .. filename .. '")')
   end,
   run_nearest = function()
     local filename = remove_until(ensure_spec(get_filename()), "spec")
-    run_in_split('"bundle exec rspec -f doc ./' .. filename .. ':' .. get_line_number() .. '"')
+    vim.cmd('VimuxRunCommand("bundle exec rspec -f doc ./' .. filename .. ':' .. get_line_number() .. '")')
   end,
 }
 
 local function run_last()
-  run_in_split(TESTS_LAST_COMMAND)
+  vim.cmd("VimuxRunLastCommand")
 end
 
 return {
