@@ -1,6 +1,17 @@
 unset RUBY_AUTO_VERSION
 
+CHRUBY_DEFAULT_RUBY_VERSION="3.4.1"
+
 function chruby_auto() {
+  # Source chruby if not already loaded
+  if ! type chruby >/dev/null 2>&1; then
+    if [[ -f /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh ]]; then
+      source /home/linuxbrew/.linuxbrew/opt/chruby/share/chruby/chruby.sh
+    elif [[ -f /usr/share/chruby/chruby.sh ]]; then
+      source /usr/share/chruby/chruby.sh
+    fi
+  fi
+
   local dir="$PWD/" version
 
   until [[ -z "$dir" ]]; do
@@ -13,7 +24,7 @@ function chruby_auto() {
       fi
     else
       # latest ruby
-      RUBY_AUTO_VERSION=`chruby | tail -n 1 | cut -d'-' -f2`
+      RUBY_AUTO_VERSION=$CHRUBY_DEFAULT_RUBY_VERSION
     fi
 
     chruby $RUBY_AUTO_VERSION
