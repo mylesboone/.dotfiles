@@ -1,7 +1,6 @@
 return {
   {
     'williamboman/mason.nvim',
-    dependencies = { 'VonHeikemen/lsp-zero.nvim' },
     config = function()
       require('mason').setup()
     end,
