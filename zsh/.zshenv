@@ -1,5 +1,5 @@
 export DOTFILES=$HOME/.dotfiles
-export PATH="$DOTFILES/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$DOTFILES/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/.local/share/bob/nvim-bin:$PATH"
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
