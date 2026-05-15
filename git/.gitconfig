@@ -42,3 +42,7 @@
   email = mylesboone@gmail.com
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[url "git@github.com:myprizepicks/"]
+	insteadOf = https://github.com/myprizepicks/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
