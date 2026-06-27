@@ -1,4 +1,4 @@
-edit_credentials() { docker_or_local "apt-get install -y neovim && EDITOR=nvim bundle exec rails credentials:edit --environment=$@" }
+edit_credentials() { docker_or_local "EDITOR=nvim bundle exec rails credentials:edit --environment=$@" }
 
 
 bundle() { docker_or_local "bundle $@" }
